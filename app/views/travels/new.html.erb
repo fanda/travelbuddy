@@ -1,0 +1,72 @@
+<% if flash[:success] and flash[:from_travel_create] %>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    jQuery.facebox({ ajax: '<%= share_path %>' });
+    $(document).bind('afterClose.facebox', function() {
+      window.location = '<%= match_travels_path %>';
+      window.location.href = '<%= match_travels_path %>';
+    });
+  });
+  </script>
+<% end %>
+
+<h1>My travel preferences</h1>
+
+<p><%=t 'new_travel_map_hint' %></p>
+
+<%= form_tag travels_path, :method => :post, :id => 'new_travels' do %>
+
+  <%= hidden_field_tag :map, '', :id => 'map_data' %>
+
+  <ul id="countries">
+  <% Country.list.each_pair do |continent, countries| %>
+    <li>
+      <%= label_tag continent, :class => "continent #{continent_checked(continent)}" do %>
+        <%= continent %>
+      <% end %>
+      <ul style="display:none">
+      <% countries.each_pair do |country, code| %>
+        <li>
+          <%= label_tag country, :class => 'checkbox' do %>
+            <%= check_box_tag "countries[#{code}]", code,
+                              country_checked(code) %>
+            <%= country %>
+          <% end %>
+        </li>
+      <% end %>
+      </ul>
+    </li>
+  <% end %>
+  </ul>
+
+  <div id="atlas" class="new-travels"></div>
+
+<div id="matchwrap">
+
+  <p>When do you want to travel?</p>
+
+  <ol id="preferences">
+    <% 3.times do |index| %>
+      <%= render :partial => 'preference', :locals => {:i => index} %>
+    <% end %>
+  </ol>
+
+  <% if @error %>
+    <div class="alert alert-error">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= @error %>
+    </div>
+  <% end %>
+
+  <%= submit_tag 'Save & Find travel buddies', :class => 'btn btn-success' %>
+
+</div>
+  <div class="out"></div>
+
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    initMap([<%= countries_for_javascript_array %>]);
+  });
+</script>

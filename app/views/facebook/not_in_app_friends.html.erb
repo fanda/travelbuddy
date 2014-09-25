@@ -1,0 +1,25 @@
+<% unless @friends.blank? %>
+  <% @friends.each do |friend| %>
+    <%  chash = countries_from_facebook_user(friend)
+        next if (codes = @users_countries & chash.keys).blank?
+        codes.each {|c| @fb_friends_heat[c] += 1 }
+    %>
+    <div class="noapp match <%= codes.join(' ') %>">
+      <%= image_tag facebook_picture_url(friend['uid']),
+                     :title => friend['name'] %>
+      <div class="<%= 'current' if friend['current_location'] %> <%= 'hometown' if friend['hometown_location'] %>">
+        <%= link_to friend['name'], facebook_profile_url(friend['uid']),
+                    :class => 'name' %>
+        <%= chash.values.flatten.join(' and ') %>.
+      </div>
+      <div class="out"></div>
+    </div>
+  <% end %>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    actualizeCountryHeatMap({<%= heatmap_javascript_array(@fb_friends_heat) %>});
+    groupLocationsByCountry();
+    initScrollable('#locations .grouped', 4);
+  });
+  </script>
+<% end %>

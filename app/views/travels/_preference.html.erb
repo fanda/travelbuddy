@@ -1,0 +1,11 @@
+<li><span><%= (i+1).ordinalize %> preference</span>
+  <%= text_field_tag "preference[#{i}][begins]", preference_value(i,:begins),
+                    :readonly => true, :class => 'date begins',
+                    :title => t('earliest_departure') %>
+  <%= text_field_tag "preference[#{i}][ends]", preference_value(i,:ends),
+                    :readonly => true, :class => 'date ends',
+                    :title => t('latest_return') %>
+  <%= hidden_field_tag "preference[#{i}][id]",
+                        @preferences[i] ? @preferences[i].id : nil %>
+  <i class="icon-remove"></i>
+</li>

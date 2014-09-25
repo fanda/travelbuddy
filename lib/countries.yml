@@ -1,0 +1,1748 @@
+US:
+  alpha2: US
+  name: United States
+  alpha3: USA
+  currency_iso4217: &usd
+    code: USD
+    symbol: $
+    name: Dollars
+    unicode_hex: 0x24
+"NO":
+  alpha2: "NO"
+  name: Norway
+  alpha3: NOR
+  currency_iso4217: &nok
+    code: NOK
+    name: Kroner
+    symbol: kr
+    unicode_hex: [0x7b, 0x72]
+NZ:
+  alpha2: NZ
+  name: New Zealand
+  alpha3: NZL
+  currency_iso4217: &nzd
+    code: NZD
+    name: New Zealand Dollars
+    symbol: $
+    unicode_hex: 0x24
+ZA:
+  alpha2: ZA
+  name: South Africa
+  alpha3: ZAF
+  currency_iso4217: &zar
+    code: ZAR
+    name: Rand
+    symbol: R
+    unicode_hex: 0x52
+CH:
+  alpha2: CH
+  name: Switzerland
+  alpha3: CHE
+  currency_iso4217: &chf
+    code: CHF
+    name: Switzerland Francs
+    symbol: CHF
+    unicode_hex: [0x43, 0x48, 0x46]
+AF:
+  alpha2: AF
+  name: Afghanistan
+  alpha3: AFG
+  currency_iso4217:
+    code: AFN
+    symbol: ؋
+    name: Afghanis
+    unicode_hex: 0x60b
+AX:
+  alpha2: AX
+  name: Aland Islands
+  alpha3: ALA
+AS:
+  alpha2: AS
+  name: American Samoa
+  alpha3: ASM
+  currency_iso4217: *usd
+AQ:
+  alpha2: AQ
+  name: Antarctica
+  alpha3: ATA
+AI:
+  alpha2: AI
+  name: Anguilla
+  alpha3: AIA
+  currency_iso4217: &xcd
+    code: XCD
+    name: East Caribbean Dollars
+    symbol: $
+    unicode_hex: 0x24
+AG:
+  alpha2: AG
+  name: Antigua And Barbuda
+  alpha3: ATG
+  currency_iso4217: *xcd
+AL:
+  alpha2: AL
+  name: Albania
+  alpha3: ALB
+  currency_iso4217:
+    code: ALL
+    symbol: LEK
+    name: Leke
+    unicode_hex: [0x4c, 0x65, 0x6b]
+DZ:
+  alpha2: DZ
+  name: Algeria
+  alpha3: DZA
+  currency_iso4217:
+    code: DZD
+    name: Dinars
+AD:
+  alpha2: AD
+  name: Andorra
+  alpha3: AND
+  currency_iso4217: &eur
+    code: EUR
+    symbol: €
+    name: Euro
+    unicode_hex: 0x20ac
+AO:
+  alpha2: AO
+  name: Angola
+  alpha3: AGO
+  currency_iso4217:
+    code: AOA
+    name: Kwanza
+AR:
+  alpha2: AR
+  name: Argentina
+  alpha3: ARG
+  currency_iso4217:
+    code: ARS
+    symbol: $
+    name: Pesos
+    unicode_hex: 0x24
+AM:
+  alpha2: AM
+  name: Armenia
+  alpha3: ARM
+  currency_iso4217:
+    code: AMD
+    name: Drams
+AW:
+  alpha2: AW
+  name: Aruba
+  alpha3: ABW
+  currency_iso4217:
+    code: AWG
+    name: Guilders
+    alt_name: Florins
+    symbol: ƒ
+    unicode_hex: 0x192
+AU:
+  alpha2: AU
+  name: Australia
+  alpha3: AUS
+  currency_iso4217: &aud
+    code: AUD
+    name: Dollars
+    symbol: $
+    unicode_hex: 0x24
+AT:
+  alpha2: AT
+  name: Austria
+  alpha3: AUT
+  currency_iso4217: *eur
+AZ:
+  alpha2: AZ
+  name: Azerbaijan
+  alpha3: AZ
+  currency_iso4217:
+    code: AZN
+    name: New Manats
+    symbol: ман
+    unicode_hex: [0x43c, 0x430, 0x43d]
+BD:
+  alpha2: BD
+  name: Bangladesh
+  alpha3: BGD
+  currency_iso4217:
+    code: BTD
+    name: Taka
+BY:
+  alpha2: BY
+  name: Belarus
+  alpha3: BLR
+  currency_iso4217:
+    code: BYR
+    name: Rubles
+    symbol: p.
+    unicode_hex: [0x70, 0x2e]
+BS:
+  alpha2: BS
+  name: Bahamas
+  alpha3: BHS
+  currency_iso4217:
+    code: BSD
+    name: Dollars
+    symbol: $
+    unicode_hex: 0x24
+BH:
+  alpha2: BH
+  name: Bahrain
+  alpha3: BHR
+  currency_iso4217:
+    code: BHD
+    name: Dinars
+BB:
+  alpha2: BB
+  name: Barbados
+  alpha3: BRB
+  currency_iso4217:
+    code: BBD
+    name: Dollars
+    symbol: $
+    unicode_hex: 0x24
+BE:
+  alpha2: BE
+  name: Belgium
+  alpha3: BEL
+  currency_iso4217: *eur
+BZ:
+  alpha2: BZ
+  name: Belize
+  alpha3: BLZ
+  currency_iso4217:
+    code: BZD
+    name: Dollars
+    symbol: BZ$
+    unicode_hex: [0x42, 0x5a, 0x24]
+BJ:
+  alpha2: BJ
+  name: Benin
+  alpha3: BEN
+  currency_iso4217: &xof
+    code: XOF
+    name: Communauté Financière Africaine Francs
+BM:
+  alpha2: BM
+  name: Bermuda
+  alpha3: BMU
+  currency_iso4217:
+    code: BMD
+    name: Dollars
+    symbol: $
+    unicode_hex: 0x24
+BT:
+  alpha2: BT
+  name: Bhutan
+  alpha3: BTN
+  currency_iso4217:
+    code: BTN
+    name: Ngultrum
+BO:
+  alpha2: BO
+  name: Bolivia
+  alpha3: BOL
+  currency_iso4217:
+    code: BOB
+    name: Bolivianos
+    symbol: $b
+    unicode_hex: [0x24, 0x62]
+BA:
+  alpha2: BA
+  name: Bosnia and Herzegovina
+  alpha3: BIH
+  currency_iso4217:
+    code: BAM
+    name: Convertible Marka
+    symbol: KM
+    unicode_hex: [0x4b, 0x4d]
+BV:
+  alpha2: BV
+  name: Bouvet Island
+  alpha3: BVT
+  currency_iso4217: *nok
+BW:
+  alpha2: BW
+  name: Botswana
+  alpha3: BWA
+  currency_iso4217:
+    code: BWP
+    name: Pulas
+    symbol: P
+    unicode_hex: 0x50
+IO:
+  alpha2: IO
+  name: British Indian Ocean Territory
+  alpha3: IOT
+  currency_iso4217: *usd
+IR:
+  alpha2: IR
+  name: Iran
+  alpha3: IRN
+  currency_iso4217:
+    code: IRR
+    name: Riais
+    symbol: ﷼
+    unicode_hex: 0xfdfc
+IQ:
+  alpha2: IQ
+  name: Iraq
+  alpha3: IRQ
+  currency_iso4217:
+    code: IQD
+    name: Dinars
+IM:
+  alpha2: IM
+  name: Isle of Man
+  alpha3: IMN
+  currency_iso4217:
+    code: IMP
+    name: Pounds
+    symbol: £
+    unicode_hex: 0xa3
+JE:
+  alpha2: JE
+  name: Jersey
+  alpha3: JEY
+  currency_iso4217:
+    code: JEP
+    name: Pounds
+    symbol: £
+    unicode_hex: 0xa3
+KP:
+  alpha2: KP
+  name: North Korea
+  alpha3: PRK
+  currency_iso4217:
+    code: KPW
+    name: Won
+    symbol: ₩
+    unicode_hex: 0x20a9
+BR:
+  alpha2: BR
+  name: Brazil
+  alpha3: BRA
+  currency_iso4217:
+    code: BRL
+    name: Real
+    symbol: R$
+    unicode_hex: [0x52, 0x24]
+VG:
+  alpha2: VG
+  name: British Virgin Islands
+  alpha3: VGB
+  currency_iso4217: *usd
+VI:
+  alpha2: VI
+  name: US Virgin Islands
+  alpha3: VIR
+  currency_iso4217: *usd
+BN:
+  alpha2: BN
+  name: Brunei Darussalam
+  alpha3: BRN
+  currency_iso4217:
+    code: BND
+    name: Dollars
+    symbol: $
+    unicode_hex: 0x24
+BG:
+  alpha2: BG
+  name: Bulgaria
+  alpha3: BGR
+  currency_iso4217:
+    code: BGN
+    name: Leva
+    symbol: лв
+    unicode_hex: [0x52, 0x432]
+BF:
+  alpha2: BF
+  name: Burkina Faso
+  alpha3: BFA
+  currency_iso4217: *xof
+BI:
+  alpha2: BI
+  name: Burundi
+  alpha3: BDI
+  currency_iso4217:
+    code: BIF
+    name: Francs
+KH:
+  alpha2: KH
+  name: Cambodia
+  alpha3: KHM
+  currency_iso4217:
+    code: KHR
+    name: Rieis
+CA:
+  alpha2: CA
+  name: Canada
+  alpha3: CAN
+  currency_iso4217:
+    code: CAD
+    name: Dollars
+    symbol: $
+    unicode_hex: 0x24
+CV:
+  alpha2: CV
+  name: Cape Verde
+  alpha3: CPV
+  currency_iso4217:
+    code: CVE
+    name: Escudos
+CM:
+  alpha2: CM
+  name: Cameroon
+  alpha3: CMR
+  currency_iso4217: &xaf
+    code: XAF
+    name: Communauté Financière Africaine Francs
+CF:
+  alpha2: CF
+  name: Central African Republic
+  alpha3: CAF
+  currency_iso4217: *xaf
+CX:
+  alpha2: CX
+  name: Christmas Island
+  alpha3: CXR
+  currency_iso4217: *aud
+CC:
+  alpha2: CC
+  name: Cocos Islands
+  alpha3: CCK
+  currency_iso4217: *aud
+KY:
+  alpha2: KY
+  name: Cayman Islands
+  alpha3: CYM
+  currency_iso4217:
+    code: KYD
+    name: Dollars
+    symbol: $
+    unicode_hex: 0x24
+TD:
+  alpha2: TD
+  name: Chad
+  alpha3: TCD
+  currency_iso4217: *xaf
+CL:
+  alpha2: CL
+  name: Chile
+  alpha3: CHL
+  currency_iso4217:
+    code: CLP
+    name: Pesos
+    symbol: $
+    unicode_hex: 0x24
+CN:
+  alpha2: CN
+  name: China
+  alpha3: CHN
+  currency_iso4217:
+    code: CNY
+    name: Yuan Renminbi
+    symbol: ¥
+    unicode_hex: 0xa5
+CO:
+  alpha2: CO
+  name: Colombia
+  alpha3: COL
+  currency_iso4217:
+    code: COP
+    name: Pesos
+    symbol: $
+    unicode_hex: 0x24
+KM:
+  alpha2: KM
+  name: Comoros
+  alpha3: COM
+  currency_iso4217:
+    code: KMF
+    name: Francs
+CK:
+  alpha2: CK
+  name: Cook Islands
+  alpha3: COK
+  currency_iso4217: *nzd
+CR:
+  alpha2: CR
+  name: Costa Rica
+  alpha3: CRI
+  currency_iso4217:
+    code: CRC
+    name: Colones
+    symbol: ₡
+    unicode_hex: 0x20a1
+HR:
+  alpha2: HR
+  name: Croatia
+  alpha3: HRV
+  currency_iso4217:
+    code: HRK
+    name: Kuna
+    symbol: kn
+    unicode_hex: [0x6b, 0x6e]
+CY:
+  alpha2: CY
+  name: Cyprus
+  alpha3: CYP
+  currency_iso4217: *eur
+CZ:
+  alpha2: CZ
+  name: Czech Republic
+  alpha3: CZE
+  currency_iso4217:
+    code: CZK
+    name: Koruny
+    symbol: Kč
+    unicode_hex: [0x4b, 0x10d]
+CD:
+  alpha2: CD
+  name: DR Congo
+  alpha3: COD
+  currency_iso4217:
+    code: CDF
+    name: Francs
+DK:
+  alpha2: DK
+  name: Denmark
+  alpha3: DNK
+  currency_iso4217: &dkk
+    code: DKK
+    name: Kroner
+    symbol: kr
+    unicode_hex: [0x6b, 0x72]
+DJ:
+  alpha2: DJ
+  name: Djibouti
+  alpha3: DJI
+  currency_iso4217:
+    code: DJF
+    name: Francs
+DM:
+  alpha2: DM
+  name: Dominica
+  alpha3: DMA
+  currency_iso4217: *xcd
+DO:
+  alpha2: DO
+  name: Dominican Republic
+  alpha3: DOM
+  currency_iso4217:
+    code: DOP
+    name: Pesos
+    symbol: RD$
+    unicode_hex: [0x52, 0x44, 0x24]
+EC:
+  alpha2: EC
+  name: Ecuador
+  alpha3: ECU
+  currency_iso4217: *usd
+SV:
+  alpha2: SV
+  name: El Salvador
+  alpha3: SLV
+  currency_iso4217: *usd
+ER:
+  alpha2: ER
+  name: Eritrea
+  alpha3: ERI
+  currency_iso4217: &etb
+    code: ETB
+    name: Ethopia Birr
+EE:
+  alpha2: EE
+  name: Estonia
+  alpha3: EST
+  currency_iso4217:
+    code: EEK
+    name: Krooni
+    symbol: kr
+    unicode_hex: [0x6b, 0x72]
+ET:
+  alpha2: ET
+  name: Ethiopia
+  alpha3: ETH
+  currency_iso4217: *etb
+FK:
+  alpha2: FK
+  name: Falkland Islands
+  alpha3: FLK
+  currency_iso4217:
+    code: FKP
+    name: Pounds
+    symbol: £
+    unicode_hex: 0xa3
+TF:
+  alpha2: TF
+  name: French Southern Territories
+  alpha3: ATF
+  currency_iso4217: *eur
+FO:
+  alpha2: FO
+  name: Faroe Islands
+  alpha3: FRO
+  currency_iso4217: *dkk
+FM:
+  alpha2: FM
+  name: Micronesia
+  alpha3: FSM
+  currency_iso4217: *usd
+MD:
+  alpha2: MD
+  name: Moldova
+  alpha3: MDA
+  currency_iso4217:
+    code: MDL
+    name: Lei
+MC:
+  alpha2: MC
+  name: Monaco
+  alpha3: MCO
+  currency_iso4217: *eur
+ME:
+  alpha2: ME
+  name: Montenegro
+  alpha3: MNE
+  currency_iso4217: *eur
+MM:
+  alpha2: MM
+  name: Myanmar
+  alpha3: MMR
+  currency_iso4217:
+    code: MNK
+    name: Kyats
+NG:
+  alpha2: NG
+  name: Nigeria
+  alpha3: NGA
+  currency_iso4217:
+    code: NGN
+    name: Nairas
+    symbol: ₦
+    unicode_hex: 0x20a6
+MP:
+  alpha2: MP
+  name: Northern Mariana Islands
+  alpha3: MNP
+  currency_iso4217: *usd
+PK:
+  alpha2: PK
+  name: Pakistan
+  alpha3: PAK
+  currency_iso4217:
+    code: PKR
+    name: Rupees
+    symbol: ₨
+    unicode_hex: 0x20a8
+PS:
+  alpha2: PS
+  name: Palestinian Territory
+  alpha3: PSE
+PY:
+  alpha2: PY
+  name: Paraguay
+  alpha3: PRY
+  currency_iso4217:
+    code: PYG
+    name: Guarani
+    symbol: Gs
+    unicode_hex: [0x47, 0x73]
+FJ:
+  alpha2: FJ
+  name: Fiji
+  alpha3: FJI
+  currency_iso4217: *usd
+FI:
+  alpha2: FI
+  name: Finland
+  alpha3: FIN
+  currency_iso4217: *eur
+FR:
+  alpha2: FR
+  name: France
+  alpha3: FRA
+  currency_iso4217: *eur
+GF:
+  alpha2: GF
+  name: French Guiana
+  alpha3: GUF
+  currency_iso4217: *eur
+PF:
+  alpha2: PF
+  name: French Polynesia
+  alpha3: PYF
+  currency_iso4217: &xpf
+    code: XPF
+    name: Comptoirs Français du Pacifique Francs
+GA:
+  alpha2: GA
+  name: Gabon
+  alpha3: GAB
+  currency_iso4217: *xaf
+GE:
+  alpha2: GE
+  name: Georgia
+  alpha3: GEO
+  currency_iso4217:
+    code: GEL
+    name: Lari
+GH:
+  alpha2: GH
+  name: Ghana
+  alpha3: GHA
+  currency_iso4217:
+    code: GHS
+    name: Cedis
+    symbol: ¢
+    unicode_hex: 0xa2
+GU:
+  alpha2: GU
+  name: Guam
+  alpha3: GUM
+  currency_iso4217: *usd
+GM:
+  alpha2: GM
+  name: Gambia
+  alpha3: GMB
+  currency_iso4217:
+    code: GMD
+    name: Lari
+GG:
+  alpha2: GG
+  name: Guernsey
+  alpha3: GGY
+  currency_iso4217:
+    code: GGP
+    name: Pounds
+    symbol: £
+    unicode_hex: 0xa3
+DE:
+  alpha2: DE
+  name: Germany
+  alpha3: DEU
+  currency_iso4217: *eur
+GI:
+  alpha2: GI
+  name: Gibraltar
+  alpha3: GIB
+  currency_iso4217:
+    code: GIP
+    name: Pounds
+    symbol: £
+    unicode_hex: 0xa3
+GR:
+  alpha2: GR
+  name: Greece
+  alpha3: GRC
+  currency_iso4217: *eur
+GL:
+  alpha2: GL
+  name: Greenland
+  alpha3: GRL
+  currency_iso4217: *dkk
+GD:
+  alpha2: GD
+  name: Grenada
+  alpha3: GRD
+  currency_iso4217: *xcd
+GP:
+  alpha2: GP
+  name: Guadeloupe
+  alpha3: GLP
+  currency_iso4217: *eur
+GT:
+  alpha2: GT
+  name: Guatemala
+  alpha3: GTM
+  currency_iso4217:
+    code: GTQ
+    name: Quetzales
+    symbol: Q
+    unicode_hex: 0x51
+GN:
+  alpha2: GN
+  name: Guinea
+  alpha3: GIN
+  currency_iso4217:
+    code: GNF
+    name: Francs
+GW:
+  alpha2: GW
+  name: Guinea-Bissau
+  alpha3: GNB
+  currency_iso4217: *xof
+GY:
+  alpha2: GY
+  name: Guyana
+  alpha3: GUY
+  currency_iso4217:
+    code: GYD
+    name: Dollars
+HT:
+  alpha2: HT
+  name: Haiti
+  alpha3: HTI
+  currency_iso4217: *usd
+HM:
+  alpha2: HM
+  name: Heard and McDonald Islands
+  alpha3: HMD
+  currency_iso4217: *aud
+HN:
+  alpha2: HN
+  name: Honduras
+  alpha3: HND
+  currency_iso4217:
+    code: HNL
+    name: Lempiras
+    symbol: L
+    unicode_hex: 0x4c
+HK:
+  alpha2: HK
+  name: Hong Kong
+  alpha3: HKG
+  currency_iso4217:
+    code: HKD
+    name: Dollars
+    symbol: $
+    unicode_hex: 0x24
+HU:
+  alpha2: HU
+  name: Hungary
+  alpha3: HUN
+  currency_iso4217:
+    code: HUF
+    name: Forint
+    symbol: Ft
+    unicode_hex: [0x46, 0x74]
+IS:
+  alpha2: IS
+  name: Iceland
+  alpha3: ISL
+  currency_iso4217:
+    code: ISK
+    name: Kronur
+    symbol: kr
+    unicode_hex: [0x6b, 0x72]
+IN:
+  alpha2: IN
+  name: India
+  alpha3: IND
+  currency_iso4217:
+    code: INR
+    name: Rupees
+    symbol: ₨
+    unicode_hex: 0x20a8
+ID:
+  alpha2: ID
+  name: Indonesia
+  alpha3: IDN
+  currency_iso4217: &idr
+    code: IDR
+    name: Indonesian Rupiahs
+    symbol: Rp
+    unicode_hex: [0x52, 0x70]
+IE:
+  alpha2: IE
+  name: Ireland
+  alpha3: IRL
+  currency_iso4217: *eur
+IL:
+  alpha2: IL
+  name: Israel
+  alpha3: ISR
+  currency_iso4217:
+    code: ILS
+    name: New Shekels
+    symbol: ₪
+    unicode_hex: 0x20aa
+IT:
+  alpha2: IT
+  name: Italy
+  alpha3: ITA
+  currency_iso4217: *eur
+JM:
+  alpha2: JM
+  name: Jamaica
+  alpha3: JAM
+  currency_iso4217:
+    code: JMD
+    name: Dollars
+JP:
+  alpha2: JP
+  name: Japan
+  alpha3: JPN
+  currency_iso4217:
+    code: JPY
+    name: Yen
+    symbol: ¥
+    unicode_hex: 0xa5
+JO:
+  alpha2: JO
+  name: Jordan
+  alpha3: JOR
+  currency_iso4217:
+    code: JOD
+    name: Dinars
+KZ:
+  alpha2: KZ
+  name: Kazakhstan
+  alpha3: KAZ
+  currency_iso4217:
+    code: KZT
+    name: Tenege
+    symbol: лв
+    unicode_hex: [0x43b, 0x432]
+KE:
+  alpha2: KE
+  name: Kenya
+  alpha3: KEN
+  currency_iso4217:
+    code: KES
+    name: Shillings
+KI:
+  alpha2: KI
+  name: Kiribati
+  alpha3: KIR
+  currency_iso4217: *aud
+KW:
+  alpha2: KW
+  name: Kuwait
+  alpha3: KWT
+  currency_iso4217:
+    code: KWD
+    name: Dinars
+KG:
+  alpha2: KG
+  name: Kyrgyzstan
+  alpha3: KGZ
+  currency_iso4217:
+    code: KGS
+    name: Soms
+    symbol: лв
+    unicode_hex: [0x43b, 0x432]
+MO:
+  alpha2: MO
+  name: Macao
+  alpha3: MAC
+MK:
+  alpha2: MK
+  name: Macedonia
+  alpha3: MKD
+  currency_iso4127:
+    code: MKD
+    name: Denars
+    symbol: ден
+    unicode_hex: [0x434, 0x435, 0x43d]
+LA:
+  alpha2: LA
+  name: Laos
+  alpha3: LAO
+  currency_iso4217:
+    code: LAK
+    name: Kips
+    symbol: ₭
+    unicode_hex: 0x20ad
+LY:
+  alpha2: LY
+  name: Libya
+  alpha3: LBY
+  currency_iso4217:
+    code: LYD
+    name: Dinars
+LB:
+  alpha2: LB
+  name: Lebanon
+  alpha3: LBN
+  currency_iso4217:
+    code: LBP
+    name: Pounds
+    symbol: £
+    unicode_hex: 0xa3
+LR:
+  alpha2: LR
+  name: Liberia
+  alpha3: LBR
+  currency_iso4217:
+    code: LRD
+    name: Dollars
+    symbol: $
+    unicode_hex: 0x24
+LV:
+  alpha2: LV
+  name: Latvia
+  alpha3: LVA
+  currency_iso4217:
+    code: LVL
+    name: Lati
+    symbol: Ls
+    unicode_hex: [0x4c, 0x73]
+LS:
+  alpha2: LS
+  name: Lesotho
+  alpha3: LSO
+  currency_iso4217:
+    code: LSL
+    name: Maloti
+    alt_currency: *zar
+LI:
+  alpha2: LI
+  name: Liechtenstein
+  alpha3: LIE
+  currency_iso4217: *chf
+LT:
+  alpha2: LT
+  name: Lithuania
+  alpha3: LTU
+  currency_iso4217:
+    code: LTL
+    name: Litai
+    symbol: Lt
+    unicode_hex: [0x4c, 0x74]
+LU:
+  alpha2: LU
+  name: Luxembourg
+  alpha3: LUX
+  currency_iso4217: *eur
+MG:
+  alpha2: MG
+  name: Madagascar
+  alpha3: MDG
+MW:
+  alpha2: MW
+  name: Malawi
+  alpha3: MWI
+  currency_iso4217:
+    code: MWK
+    name: Kwachas
+MY:
+  alpha2: MY
+  name: Malaysia
+  alpha3: MYS
+  currency_iso4217:
+    code: MYR
+    name: Ringgits
+    symbol: RM
+    unicode_hex: [0x52, 0x4d]
+MV:
+  alpha2: MV
+  name: Maldives
+  alpha3: MDV
+  currency_iso4217:
+    code: MVR
+    name: Rufiyaa
+ML:
+  alpha2: ML
+  name: Mali
+  alpha3: MLI
+  currency_iso4217: *xof
+MT:
+  alpha2: MT
+  name: Malta
+  alpha3: MLT
+  currency_iso4217: *eur
+MH:
+  alpha2: MH
+  name: Marshall Islands
+  alpha3: MHL
+  currency_iso4217: *usd
+MQ:
+  alpha2: MQ
+  name: Martinique
+  alpha3: MTQ
+  currency_iso4217: *eur
+MF:
+  alpha2: MF
+  name: Saint Martin
+  alpha3: MAF
+  currency_iso4217: *eur
+MR:
+  alpha2: MR
+  name: Mauritania
+  alpha3: MRT
+  currency_iso4217:
+    code: MRO
+    name: Ouguiyas
+MU:
+  alpha2: MU
+  name: Mauritius
+  alpha3: MUS
+  currency_iso4217:
+    code: MUR
+    name: Rupees
+    symbol: ₨
+    unicode_hex: 0x20a8
+YT:
+  alpha2: YT
+  name: Mayotte
+  alpha3: MYT
+  currency_iso4217: *eur
+MX:
+  alpha2: MX
+  name: Mexico
+  alpha3: MEX
+  currency_iso4217:
+    code: MXN
+    name: Pesos
+    symbol: $
+    unicode_hex: 0x24
+MN:
+  alpha2: MN
+  name: Mongolia
+  alpha3: MNG
+  currency_iso4217:
+    code: MNT
+    name: Tugriks
+    symbol: ₮
+    unicode_hex: 0x20ae
+MS:
+  alpha2: MS
+  name: Montserrat
+  alpha3: MSR
+  currency_iso4217: *xcd
+MA:
+  alpha2: MA
+  name: Morocco
+  alpha3: MAR
+  currency_iso4217: &mad
+    code: MAD
+    name: Dirhams
+MZ:
+  alpha2: MZ
+  name: Mozambique
+  alpha3: MOZ
+  currency_iso4217:
+    code: MZN
+    name: Meticals
+    symbol: MT
+    unicode_hex: [0x4d, 0x54]
+NA:
+  alpha2: NA
+  name: Namibia
+  alpha3: NAM
+  currency_iso4217:
+    code: NAD
+    name: Dollars
+    symbol: $
+    unicode_hex: 0x24
+    alt_currency: *zar
+NR:
+  alpha2: NR
+  name: Nauru
+  alpha3: NRU
+  currency_iso4217: *aud
+NP:
+  alpha2: NP
+  name: Nepal
+  alpha3: NPL
+  currency_iso4217:
+    code: NPR
+    name: Rupees
+    symbol: ₨
+    unicode_hex: 0x20a8
+NL:
+  alpha2: NL
+  name: Netherlands
+  alpha3: NLD
+  currency_iso4217: *eur
+AN:
+  alpha2: AN
+  name: Netherlands Antilles
+  alpha3: ANT
+  currency_iso4217:
+   code: ANG
+   name: Guilders
+   symbol: ƒ
+   unicode_hex: 0x192
+NC:
+  alpha2: NC
+  name: New Caledonia
+  alpha3: NCL
+  currency_iso4217:
+    code: XPF
+    name: Comptoirs Français du Pacifique Francs
+NI:
+  alpha2: NI
+  name: Nicaragua
+  alpha3: NIC
+  currency_iso4217:
+    code: NIO
+    name: Cordobas
+    symbol: C$
+    unicode_hex: [0x43, 0x24]
+NE:
+  alpha2: NE
+  name: Niger
+  alpha3: NER
+  currency_iso4217: *xof
+NU:
+  alpha2: NU
+  name: Niue
+  alpha3: NIU
+NF:
+  alpha2: NF
+  name: Norfolk Island
+  alpha3: NFK
+  currency_iso4217: *aud
+OM:
+  alpha2: OM
+  name: Oman
+  alpha3: OMN
+  currency_iso4217:
+    code: OMR
+    name: Riais
+    symbol: ﷼
+    unicode_hex: 0xfdfc
+PW:
+  alpha2: PW
+  name: Palau
+  alpha3: PLW
+  currency_iso4217: *usd
+PA:
+  alpha2: PA
+  name: Panama
+  alpha3: PAN
+  currency_iso4217:
+    code: PAB
+    name: Balboa
+    symbol: B/.
+    unicode_hex: [0x42, 0x2f, 0x2e]
+    alt_currency: *usd
+PG:
+  alpha2: PG
+  name: Papua New Guinea
+  alpha3: PNG
+  currency_iso4217:
+    code: PGK
+    name: Kina
+PE:
+  alpha2: PE
+  name: Peru
+  alpha3: PER
+  currency_iso4217:
+    code: PEN
+    name: Nuevos Soles
+    symbol: S/.
+    unicode_hex: [0x50,0x2f,0x2e]
+PH:
+  alpha2: PH
+  name: Philippines
+  alpha3: PHL
+  currency_iso4217:
+    code: PHP
+    name: Pesos
+    symbol: Php
+    unicode_hex: [0x50, 0x68, 0x70]
+PN:
+  alpha2: PN
+  name: Pitcairn
+  alpha3: PCN
+  currency_iso4217: *nzd
+PR:
+  alpha2: PR
+  name: Puerto Rico
+  alpha3: PRI
+  currency_iso4217: *usd
+PL:
+  alpha2: PL
+  name: Poland
+  alpha3: POL
+  currency_iso4217:
+    code: PLN
+    name: Zlotych
+    symbol: zł
+    unicode_hex: [0x7a, 0x142]
+PT:
+  alpha2: PT
+  name: Portugal
+  alpha3: PRT
+  currency_iso4217: *eur
+QA:
+  alpha2: QA
+  name: Qatar
+  alpha3: QAT
+  currency_iso4217:
+    code: QAR
+    name: Rials
+    symbol: ﷼
+    unicode_hex: 0xfdfc
+CG:
+  alpha2: CG
+  name: Congo
+  alpha3: COG
+CD:
+  alpha2: CD
+  name: DR Congo
+  alpha3: COD
+CI:
+  alpha2: CI
+  name: Côte d'Ivoire
+  alpha3: CIV
+  currency_iso4217: *xof
+EG:
+  alpha2: EG
+  name: Egypt
+  alpha3: EGY
+  currency_iso4217:
+    code: EGP
+    name: Pounds
+    symbol: £
+    unicode_hex: 0xa3
+GQ:
+  alpha2: GQ
+  name: Equatorial Guinea
+  alpha3: GNQ
+CU:
+  alpha2: CU
+  name: Cuba
+  alpha3: CUB
+  currency_iso4217:
+    code: CUP
+    name: Pesos
+    symbol: ₱
+    unicode_hex: 0x20b1
+RE:
+  alpha2: RE
+  name: Réunion
+  alpha3: REU
+  currency_iso4217: *eur
+RO:
+  alpha2: RO
+  name: Romania
+  alpha3: ROU
+  currency_iso4217:
+    code: RON
+    name: New Lei
+    symbol: lei
+    unicode_hex: [0x6c, 0x65, 0x69]
+RU:
+  alpha2: RU
+  name: Russia
+  alpha3: RUS
+  currency_iso4217: &rub
+    code: RUB
+    name: Rubles
+    symbol: руб
+    unicode_hex: [0x440, 0x443, 0x431]
+BL:
+  alpha2: BL
+  name: Saint Barthelemy
+  alpha3: BLM
+RW:
+  alpha2: RW
+  name: Rwanda
+  alpha3: RWA
+  currency_iso4217:
+    code: RWF
+    name: Francs
+VC:
+  alpha2: VC
+  name: Saint Vincent and the Grenadines
+  alpha3: VCT
+  currency_iso4217: *xcd
+WS:
+  alpha2: WS
+  name: Samoa
+  alpha3: WSM
+  currency_iso4217: *usd
+SM:
+  alpha2: SM
+  name: San Marino
+  alpha3: SMR
+  currency_iso4217: *eur
+ST:
+  alpha2: ST
+  name: São Tome and Principe
+  alpha3: STP
+  currency_iso4217:
+    code: STD
+    name: Dobras
+RS:
+  alpha2: RS
+  name: Serbia
+  alpha3: SRB
+  currency_iso4217:
+    code: RSD
+    name: Dinars
+    symbol: Дин.
+    unicode_hex: [0x414, 0x438, 0x43d, 0x2e]
+GS:
+  alpha2: GS
+  name: South Georgia and the South Sandwich Islands
+  alpha3: SGS
+  currency_iso4217: *gbp
+SD:
+  alpha2: SD
+  name: Sudan
+  alpha3: SDN
+  currency_iso4217:
+    code: SDG
+    name: Pounds
+SA:
+  alpha2: SA
+  name: Saudi Arabia
+  alpha3: SAU
+  currency_iso4217:
+    code: SAR
+    name: Riyals
+    symbol: ﷼
+    unicode_hex: 0xfdfc
+SN:
+  alpha2: SN
+  name: Senegal
+  alpha3: SEN
+  currency_iso4217: *xof
+SC:
+  alpha2: SC
+  name: Seychelles
+  alpha3: SYC
+  currency_iso4217:
+    code: SCR
+    name: Rupees
+    symbol: ₨
+    unicode_hex: 0x20a8
+SL:
+  alpha2: SL
+  name: Sierra Leone
+  alpha3: SLE
+  currency_iso4217:
+    code: SLL
+    name: Leones
+SG:
+  alpha2: SG
+  name: Singapore
+  alpha3: SGP
+  currency_iso4217:
+    code: SGD
+    name: Dollars
+    symbol: $
+    unicode_hex: 0x24
+SK:
+  alpha2: SK
+  name: Slovakia
+  alpha3: SVK
+  currency_iso4217: *eur
+SI:
+  alpha2: SI
+  name: Slovenia
+  alpha3: SVN
+  currency_iso4217: *eur
+SB:
+  alpha2: SB
+  name: Solomon Islands
+  alpha3: SLB
+  currency_iso4217:
+    code: SBD
+    name: Dollars
+    symbol: $
+    unicode_hex: 0x24
+SO:
+  alpha2: SO
+  name: Somalia
+  alpha3: SOM
+  currency_iso4217:
+    code: SOS
+    name: Shillings
+    symbol: S
+    unicode_hex: 0x53
+KR:
+  alpha2: KR
+  name: South Korea
+  alpha3: KOR
+  currency_iso4217:
+    code: KRW
+    name: Won
+    symbol: ₩
+    unicode_hex: 0x20a9
+ES:
+  alpha2: ES
+  name: Spain
+  alpha3: ESP
+  currency_iso4217: *eur
+LK:
+  alpha2: LK
+  name: Sri Lanka
+  alpha3: LKA
+  currency_iso4217:
+    code: LKR
+    name: Rupees
+    symbol: ₨
+    unicode_hex: 0x20a8
+SH:
+  alpha2: SH
+  name: Saint Helena
+  alpha3: SHN
+  currency_iso4217:
+    code: SHP
+    name: Pounds
+    symbol: £
+    unicode_hex: 0xa3
+KN:
+  alpha2: KN
+  name: Saint Kitts and Nevis
+  alpha3: KNA
+  currency_iso4217: *xcd
+LC:
+  alpha2: LC
+  name: Saint Lucia
+  alpha3: LCA
+  currency_iso4217: *xcd
+PM:
+  alpha2: PM
+  name: Saint Pierre and Miquelon
+  alpha3: SPM
+  currency_iso4217: *eur
+SR:
+  alpha2: SR
+  name: Suriname
+  alpha3: SUR
+  currency_iso4217:
+    code: SRD
+    name: Dollars
+    symbol: $
+    unicode_hex: 0x24
+SJ:
+  alpha2: SJ
+  name: Svalbard and Jan Mayen
+  alpha3: SJM
+  currency_iso4217: *nok
+SY:
+  alpha2: SY
+  name: Syria
+  alpha3: SYR
+  currency_iso4217:
+    code: SYP
+    name: Pounds
+    symbol: £
+    unicode_hex: 0xa3
+SZ:
+  alpha2: SZ
+  name: Swaziland
+  alpha3: SWZ
+  currency_iso4217:
+    code: SZL
+    name: Emalangeni
+SE:
+  alpha2: SE
+  name: Sweden
+  alpha3: SWE
+  currency_iso4217:
+    code: SEK
+    name: Kronor
+    symbol: kr
+    unicode_hex: [0x6b, 0x72]
+TW:
+  alpha2: TW
+  name: Taiwan
+  alpha3: TWN
+  currency_iso4217:
+    code: TWD
+    name: New Dollars
+    symbol: NT$
+    unicode_hex: [0x4e, 0x54, 0x24]
+TJ:
+  alpha2: TJ
+  name: Tajikistan
+  alpha3: TJK
+  currency_iso4217:
+    code: TJS
+    name: Somoni
+    alt_currency: *rub
+TZ:
+  alpha2: TZ
+  name: Tanzania
+  alpha3: TZA
+  currency_iso4217:
+    code: TZS
+    name: Shillings
+TL:
+  alpha2: TL
+  name: Timor-Leste
+  alpha3: TLS
+  currency_iso4217: *idr
+TK:
+  alpha2: TK
+  name: Tokelau
+  alpha3: TKL
+  currency_iso4217: *nzd
+UM:
+  alpha2: UM
+  name: United States Minor Outlying Islands
+  alpha3: UMI
+  currency_iso4217: *usd
+UZ:
+  alpha2: UZ
+  name: Uzbekistan
+  alpha3: UZB
+  currency_iso4217:
+    code: UZS
+    name: Sums
+    symbol: лв
+    unicode_hex: [0x43b, 0x432]
+TH:
+  alpha2: TH
+  name: Thailand
+  alpha3: THA
+  currency_iso4217:
+    code: THB
+    name: Baht
+    symbol: ฿
+    unicode_hex: 0xe3f
+TG:
+  alpha2: TG
+  name: Togo
+  alpha3: TGO
+  currency_iso4217: *xof
+TO:
+  alpha2: TO
+  name: Tonga
+  alpha3: TON
+  currency_iso4217:
+    code: TOP
+    name: Pa'anga
+TT:
+  alpha2: TT
+  name: Trinidad and Tobago
+  alpha3: TTO
+  currency_iso4217:
+    code: TTD
+    name: Dollars
+    symbol: $
+    unicode_hex: 0x24
+TN:
+  alpha2: TN
+  name: Tunisia
+  alpha3: TUN
+  currency_iso4217:
+    code: TND
+    name: Dollars
+TR:
+  alpha2: TR
+  name: Turkey
+  alpha3: TUR
+  currency_iso4217:
+    code: TRY
+    name: Lira
+    symbol: TL
+    unicode_hex: [0x54, 0x4c]
+TM:
+  alpha2: TM
+  name: Turkmenistan
+  alpha3: TKM
+TC:
+  alpha2: TC
+  name: Turks and Caicos Islands
+  alpha3: TCA
+  currency_iso4217: *usd
+TV:
+  alpha2: TV
+  name: Tuvalu
+  alpha3: TUV
+  currency_iso4217:
+    code: TVD
+    name: Tuvalu Dollars
+UG:
+  alpha2: UG
+  name: Uganda
+  alpha3: UGA
+  currency_iso4217:
+    code: UGX
+    name: Shillings
+UA:
+  alpha2: UA
+  name: Ukraine
+  alpha3: UKR
+  currency_iso4217:
+    code: UAH
+    name: Hryvnia
+    symbol: ₴
+    unicode_hex: 0x20b4
+AE:
+  alpha2: AE
+  name: United Arab Emirates
+  alpha3: ARE
+  currency_iso4217:
+    code: AED
+    name: Dirhams
+GB:
+  alpha2: GB
+  name: United Kingdom
+  alpha3: GBR
+  currency_iso4217: &gbp
+    code: GBP
+    name: Pounds
+    symbol: £
+    unicode_hex: 0xa3
+UY:
+  alpha2: UY
+  name: Uruguay
+  alpha3: URY
+  currency_iso4217:
+    code: UYU
+    name: Pesos
+    symbol: $U
+    unicode_hex: [0x24, 0x55]
+VU:
+  alpha2: VU
+  name: Vanuatu
+  alpha3: VUT
+VA:
+  alpha2: VA
+  name: Vatican City
+  alpha3: VAT
+  currency_iso4217: *eur
+VE:
+  alpha2: VE
+  name: Venezuela
+  alpha3: VEN
+  currency_iso4217:
+    code: VEF
+    name: Bolivares Fuertes
+    symbol: Bs
+    unicode_hex: [0x43b, 0x432]
+VN:
+  alpha2: VN
+  name: Vietnam
+  alpha3: VNM
+  currency_iso4217:
+    code: VND
+    name: Dong
+    symbol: ₫
+    unicode_hex: 0x20ab
+WF:
+  alpha2: WF
+  name: Wallis and Futuna
+  alpha3: WLF
+  currency_iso4217: *xpf
+EH:
+  alpha2: EH
+  name: Western Sahara
+  alpha3: ESH
+  currency_iso4217: *mad
+ZW:
+  alpha2: ZW
+  name: Zimbabwe
+  alpha3: ZWE
+  currency_iso4217:
+    code: ZWD
+    name: Zimbabwe Dollars
+    symbol: Z$
+    unicode_hex: [0x5a, 0x24]
+YE:
+  alpha2: YE
+  name: Yemen
+  alpha3: YEM
+  currency_iso4217:
+    code: YER
+    name: Rials
+    symbol: ﷼
+    unicode_hex: 0xfdfc
+ZM:
+  alpha2: ZM
+  name: Zambia
+  alpha3: ZMB
+  currency_iso4217:
+    code: ZMK
+    name: Kwacha

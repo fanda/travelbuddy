@@ -1,0 +1,369 @@
+/*
+ *= require_self
+@import "facebox"
+@import "twitter/bootstrap"
+@import "datepicker"
+@import "jquery.facebook-multifriend-select"
+@import "jquery.vector-map"
+@import "jquery.cluetip"
+@import "event_calendar"
+
+.tar
+  text-align: right
+.tac
+  text-align: center
+.taj
+  text-align: justify
+.dis
+  display: none
+.left
+  float: left
+.right
+  float: right
+.out
+  clear: both
+  margin: 0
+  padding: 0
+.hint
+  color: #888
+  font-size: 92%
+.matched_pic
+  margin-top: 4px
+.dropdown .caret
+  margin-left: 5px
+  margin-top: 12px
+.mauto
+  margin: auto
+
+$photos_height: 130px
+$grouped_height: 130px
+.goto
+  float: right
+  margin-right: 16px
+.browse, .goto
+  position: relative
+  top: -$photos_height
+  display: block
+  height: $photos_height
+  margin-bottom: -$photos_height
+  text-decoration: none !important
+  padding-top: 10px
+  font-weight: bold
+.browse.next, .goto
+  background: image-url('next-photo.png')
+  text-align: right
+  width: 150px
+.browse.prev
+  width: 22px
+  background: image-url('prev.png') no-repeat left 13px
+.browse.disabled
+  display: none
+.photos, .photos-messages, .grouped
+  position: relative
+  overflow: hidden
+  height: $photos_height
+  margin-left: 30px
+  .items
+    width: 20000em
+    position: absolute
+.photos, .photos-messages
+  width: 510px
+  img
+    margin: 3px
+.photos-messages
+  width: 710px
+
+.grouped
+  height: $grouped_height
+  width: 670px
+
+.location
+  padding-bottom: 10px
+  .browse
+    height: $grouped_height
+    top: -$grouped_height
+  .browse.next
+    width: 150px
+    position: relative
+    left: 40px
+#locations
+  padding-bottom: 10px
+
+
+body, #cfluid
+  width: 960px
+  margin: auto
+#content
+  position: relative
+  top: 60px
+#sidebar
+  width: 180px
+  float: left
+  margin-right: 20px
+#main
+  width: 760px
+  float: left
+#cfluid .brand
+  margin-left: 380px
+#messages
+  padding: 0
+  margin: 0
+#hey_sign_up
+  background: image-url('look_up.png') no-repeat 200px top
+  margin-top: -1em
+  margin-left: 100px
+  margin-bottom: 20px
+  padding-top: 8px
+  .inner
+    background: #555
+    border: solid 1px #444
+    border-radius: 5px
+    color: #fff
+    width: 420px
+    padding: 1em
+    margin: 0
+    box-shadow: 3px 3px 4px #555
+    p
+      width: 300px
+      margin-bottom: 0
+#atlas
+  width: 540px
+  height: 300px
+  float: right
+  margin-right: 3px
+  margin-bottom: 10px
+
+#fb_atlas
+  width: 640px
+  height: 370px
+  /* height = width * 0.5789
+  display: none
+
+#heatmap
+  width: 760px
+  height: 420px
+  margin-bottom: 10px
+
+#legend
+  /*position: relative
+  /*top: -13px
+  line-height: 13px
+  color: #999
+  small
+    font-size: 12px
+
+#user_travels_where
+  height: 51em
+
+#countries
+  height: 500px
+  width: 217px
+  overflow-y: auto
+  overflow-x: hidden
+  padding: 0
+  margin: 0
+  float: right
+
+#countries, #countries *
+  list-style: none
+
+#matchwrap
+  /*float: right
+  width: 700px
+
+form#user_settings
+  margin: 0 !important
+#user_settings_head
+  background: #369bd7
+  border: 1px solid #36bbd7
+  text-shadow: 1px 1px 1px #555
+  padding: 5px
+  h1
+    color: #fff
+    font-size: 20px
+    font-weight: bold
+    margin: 0
+    padding-left: 10px
+#user_settings_body
+  padding: 16px
+  div
+    padding-left: 10px
+  label
+    display: inline
+    cursor: pointer
+#user_settings_foot
+  background: #f2f2f2
+  border-top: 1px solid #ccc
+  text-align: right
+  padding: 5px
+
+#travel_buddy_friends
+  img
+    width: 30px
+    height: 30px
+    margin: 1px
+#user_count
+  color: #369bd7
+  text-shadow: 1px 0 1px #369bd7
+#nav_user > a
+  font-weight: bold
+
+#user_friends > img
+  margin: 1px
+  float: left
+
+.container-fluid
+  padding-left: 0
+  padding-right: 0
+
+.well.sidebar-nav, #main.hero-unit
+  background: #fff
+
+.sm-friend-pic
+  width: 25px
+  height: 25px
+
+.date, input[readonly].date
+  cursor: pointer
+
+#preferences.matching
+  select#preference_choice
+    width: 160px
+  input#begins, input#ends
+    width: 170px
+
+#preferences
+  margin-left: 4px
+  input
+    width: 160px
+  li
+    list-style: none
+    span
+      display: inline-block
+      width: 7em
+    i
+      cursor: pointer
+      display: none
+    &:hover
+      i
+        display: inline-block
+
+.match, .msg
+  img
+    float: left
+    margin: 0ex 1em 1ex 0
+    vertical-align: center
+  small
+    display: block
+    padding: 6px
+    color: #aaa
+  div
+    padding-top: 1ex
+
+.amatch
+  display: block
+  float: left
+  text-align: center
+  position: relative
+  img
+    vertical-align: bottom
+  a.name
+    position: absolute
+    top: 105px
+    left: 5px
+    font-size: 10px
+    color: #eee
+    text-shadow: 1px 1px 1px #111, -1px -1px 1px #111, -1px 1px 1px #111, 1px -1px 1px #111
+
+.bimg
+  overflow: hidden
+  height: 110px
+  img
+    width: 100px
+
+
+#fb_head
+  background: #6D84B4
+  border: 1px solid #3B5998
+  padding: 5px
+  h1
+    background: transparent url('/img/fb.gif') no-repeat left center
+    color: #fff
+    font-size: 16px
+    font-weight: bold
+    padding: 0 0 0 18px
+    margin: 0
+
+#fb_body
+  padding: 10px
+  .text
+    width: 330px
+    padding: 0 10px
+    textarea
+      width: 330px
+      border: none
+#fb_foot
+  background: #f2f2f2
+  border-top: 1px solid #ccc
+  text-align: right
+  padding: 5px
+  small
+    line-height: 13px
+    font-size: 12px
+#main h1
+  font-size: 20px
+
+.icon-facebook
+  background-position: 0 0
+  background-image: url('/img/fb14.gif')
+
+.dropdown-toggle
+  color: #eee
+
+.navbar .brand
+  padding: 5px 20px 7px
+
+.continent
+  background-image: url('/img/expand-collapse.png')
+  background-repeat: no-repeat
+  display: inline-block
+  height: 15px
+  padding: 0 0 0 18px
+  margin: 2px 8px 4px
+  cursor: hand
+
+.continent.collapsed
+  background-position: 0px 1px
+
+.continent.expanded
+  background-position: 0px -16px
+
+.fb_comment_wrap
+  padding-left: 60px
+
+input#amzn_search_textfield
+  width: 130px
+
+.alert-notice a
+  color: #1C628B
+  text-decoration: underline
+
+#facebox .formtastic
+  margin-bottom: 0
+  ol
+    list-style: none
+  label
+    background: #fff
+    width: 55px
+    color: #555
+    display: inline-block
+    text-shadow: none
+  input[type="text"]
+    width: 180px
+
+#map_image
+  float: right
+  width: 400px
+  margin-bottom: -127px
+#trip_tabs
+  margin-bottom: 30px

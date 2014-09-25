@@ -1,0 +1,56 @@
+<div id="heatmap"></div>
+<div id="legend" class="tar">
+  <img src="/img/heat.png" alt="Map legend" /><br/>
+  <small>more friends</small> &rarr;
+</div>
+
+
+<% @country_users.each do |country, users| %>
+  <div class="dis" id="country_<%= country %>"><%= users.join(',') %></div>
+<% end %>
+<% @locations.each do |loctype, lochash| %>
+  <% lochash.each do |country, users| %>
+    <% @country_heat[country] += users.size %>
+    <div class="dis" id="<%= "#{loctype}_#{country}" %>"><%= users.map(&:name).join(',') %></div>
+  <% end %>
+<% end unless @index %>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    initHeatmap({<%= heatmap_javascript_array(@country_heat) %>});
+  });
+  function some_fb_uids() {
+    return '<%= random_users_fb_ids %>';
+  }
+</script>
+
+<% if @messages.any? %>
+  <% @messages.each do |message| %>
+  <% next unless message.text %>
+  <div class="msg" id="msg_<%= message.id %>">
+    <%= image_tag message.user.picture_url,
+                :class => "i#{message.user.facebook_id} tip",
+                :title => message.user.name,
+                :rel => "/friend/facebook/#{message.user.facebook_id}" %>
+    <div>
+      <%=link_to message.user.name,facebook_profile_url(message.user.facebook_id), :class=>'name', :target => '_blank'%>
+      <%=message.text.html_safe %>
+      <br/>
+      <small>
+        <a name="ac_<%= message.id %>" id="ac_<%= message.id %>" class="ac">
+          <%=t 'add_comment' %> (<fb:comments-count href=<%= root_url %>message/<%= message.id %>></fb:comments-count>)</a>
+        <span class="ac_<%= message.id %>">·</span>
+        <%= time_ago_in_words message.created_at, true %> ago
+        ·
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="<%= root_url %>message/<%= message.id %>"></div>
+      </small>
+      <div class="dis fb_comment_wrap" id="c_<%= message.id %>">
+        <div class="fb-comments" data-href="<%= root_url %>message/<%= message.id %>" data-num-posts="2" data-width="400" data-publish_feed="true" data-title=""></div>
+      </div>
+    </div>
+    <div class="out"></div>
+  </div>
+  <% end %>
+  <%= paginate @messages %>
+<% end %>

@@ -1,0 +1,247 @@
+<% if flash[:success] and flash[:from_travel_create] %>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    jQuery.facebox({ ajax: '<%= share_path %>' });
+    /*$(document).bind('afterClose.facebox', function() {
+      window.location = '<%= match_travels_path %>';
+      window.location.href = '<%= match_travels_path %>';
+    });*/
+  });
+  </script>
+<% end %>
+
+<br/>
+
+<ul id="countries" style="height:340px">
+  <% Country.list.each_pair do |continent, countries| %>
+    <li class="continents" style="display:none">
+      <%= continent %>
+      <ul>
+      <% countries.each_pair do |country, code| %>
+        <li style="display:none" id="countries_<%= code %>"><%= country %></li>
+      <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
+<div id="atlas" class="country_matches"></div>
+<div id="legend" class="tar">
+  <img src="/img/heat.png" alt="Map legend" /><br/>
+  <small>more friends</small> &rarr;
+</div>
+
+
+
+
+<div id="perfects" class="out">
+<% if @perfects.any? %>
+  <h1>Perfect travel matches</h1>
+  <% @perfects.each_pair do |friend, travels| %>
+  <div class="match">
+    <%= image_tag friend.picture_url,
+                :class => "i#{friend.facebook_id} tip",
+                :title => friend.name,
+                :rel => "/friend/facebook/#{friend.facebook_id}" %>
+    <div>
+      <%= link_to friend.name,facebook_profile_url(friend.facebook_id), :target => '_blank' %>
+      also wants to go to
+      <%= friend.messages_country(travels[:country]).first.html_safe %>
+      and also wants to travel
+      <%= friend.messages_time(travels[:time]).first.html_safe %>
+
+      <%#= travels[:country].map {|c| c.countryname }.join(' or ')
+      %>
+      <%#= travels[:time].map {|c| c.date_range }.join(' or ')
+      %>
+    </div>
+    <div class="out"></div>
+  </div>
+  <% end %>
+<% end %>
+</div>
+
+
+<ul id="matchtabs" class="nav nav-tabs">
+  <li><a href="#country_matches" data-toggle="tab">Search by Destination</a></li>
+  <li><a href="#time_matches" data-toggle="tab">Search by Schedule</a></li>
+</ul>
+
+
+<div id="preferences" class="matching">
+    <%= text_field_tag "begins", '',
+                      :readonly => true, :class => 'date',
+                    :title => t('earliest_departure') %>
+    <%= text_field_tag "ends", '',
+                      :readonly => true, :class => 'date',
+                    :title => t('latest_return') %>
+    <%= select_tag 'preference_choice', preference_options %>
+</div>
+
+
+<div id="matchwrap" class="tab-content">
+
+
+  <div id="time_matches" class="tab-pane">
+  <%=t 'time_match_message' %>
+  <% if @time_messages.any? %>
+    <% time_match_countries = [] %>
+    <% @time_messages.each do |user, content| %>
+      <% # should be in controller but performance :) %>
+      <% content[2].each {|country| @time_heat[country] += 1 } %>
+      <%= render :partial => 'match', :locals => {
+          :user    => user,
+          :message => time_message(content.first, content[3]),
+          :special => [content[1], content[2].join(' ')].join(' ')
+      } %>
+      <% time_match_countries += content[2] %>
+    <% end %>
+  <% end %>
+  </div>
+
+
+  <div id="country_matches" class="tab-pane">
+  <%=t 'country_match_message' %>
+
+    <p><%=t 'match_map_hint' %></p>
+
+
+  <% grouped_matches = @country_matches.group_by(&:country) %>
+  <% shown_users = [] %>
+  <% grouped_matches.each do |country, travels| %>
+    <% if travels.count <= AppConfig.shown_without_aggregation %>
+      <% travels.each do |travel| %>
+        <% next if shown_users.include?(travel.user_id) %>
+        <% shown_users << travel.user_id %>
+        <% content = @country_messages[travel.user] %>
+        <%= render :partial => 'match', :locals => {
+            :user    => travel.user,
+            :message => country_message(content.first, content[2]),
+            :special => content[1] # countries string to class
+        } %>
+      <% end %>
+    <% else # show aggregation %>
+      <div class="match <%= country %>">
+        <span><%= travels.count %> of your friends want to go to <%= country_name(country) %></span>
+        <div class="grouped"><div class="items">
+          <% travels.group_by(&:user_id).values.each do |user_travels| %>
+            <% content = @country_messages[user_travels.first.user] %>
+            <%= render :partial => 'aggregated_match', :locals => {
+                :user    => user_travels.first.user,
+                :message => country_message(content.first, content[2]),
+                :special => content[1] # countries string to class
+            } %>
+          <% end %>
+        </div></div>
+        <a href="#" class="prev browse left" onclick="return false;"></a>
+        <a href="#" class="browse next right" onclick="return false;"></a>
+        <div class="out"></div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% if @photos.any? %>
+    <% @photos.each do |friend, countries_photos| %>
+      <%
+        skip = []
+        if @friends_locations.any? and @friends_locations[friend]
+          skip << @friends_locations[friend][:current][1] if @friends_locations[friend].key?(:current)
+          skip << @friends_locations[friend][:hometown][1] if @friends_locations[friend].key?(:hometown)
+        end
+      %>
+      <% countries_photos.each do |country, photos| %>
+        <% next if skip.include?(country) %>
+        <div class="match <%= country %>">
+          <%= image_tag friend.picture_url,
+                      :class => "i#{friend.facebook_id} tip",
+                      :title => friend.name,
+                      :rel => "/friend/facebook/#{friend.facebook_id}" %>
+          <div>
+            <%= link_to friend.name, user_profile_url(friend.facebook_id), :class=>'name' %>
+            <%  message = 'was in '
+                message << country_name(country)
+            %>
+            <%= message.html_safe %>
+            <%= scrollable_photos(photos).html_safe %>
+          </div>
+          <div class="out"></div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% if @friends_locations.any? %>
+    <div id="locations">
+    <% @friends_locations.each do |friend, location| %>
+      <div class="match <%=location.values.map {|v|v[1]}.join(' ') %>">
+        <%= image_tag friend.picture_url,
+                      :class => "i#{friend.facebook_id} tip",
+                      :title => friend.name,
+                      :rel => "/friend/facebook/#{friend.facebook_id}" %>
+        <div class="<%= location.keys.join(' ') %>">
+          <%= link_to friend.name, user_profile_url(friend.facebook_id), :class=>'name' %>
+          <%  messages = []
+              if location.key?(:current)
+                messages << "lives in #{location[:current][0]}"
+              end
+              if location.key?(:hometown)
+                messages << "is from #{location[:hometown][0]}"
+              end
+          %>
+          <%= messages.join(' and ') %>
+        </div>
+        <div class="out"></div>
+      </div>
+    <% end %>
+    </div>
+  <% end %>
+
+  <% if @checkins.any? %>
+    <% @checkins.each do |checkin| %>
+      <div class="match <%= checkin.country %>">
+        <% friend = checkin.user %>
+        <%= image_tag friend.picture_url,
+                      :class => "i#{friend.facebook_id} tip",
+                      :title => friend.name,
+                      :rel => "/friend/facebook/#{friend.facebook_id}" %>
+        <div>
+          <%= link_to friend.name, facebook_profile_url(friend.facebook_id), :class=>'name' %>
+          <%  message = 'checked in '
+              message << "#{checkin.city}, " if checkin.city
+              message << country_name(checkin.country)
+              message << " in #{l checkin.created_time}"
+              if checkin.message
+                message << " with this message: #{checkin.message}"
+              end
+          %>
+          <%= message %>
+        </div>
+        <div class="out"></div>
+      </div>
+    <% end %>
+  <% end %>
+
+  </div>
+
+
+</div>
+
+<div class="out"></div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    initMap([]);
+
+    heat_country = {<%= heatmap_javascript_array(@country_heat) %>}
+    heat_time = {<%= heatmap_javascript_array(@time_heat) %>}
+
+    selected_country = selected;
+    selected_time = [<%= time_matches_for_js_array time_match_countries %>];
+
+    $('.nav-tabs a:first').tab('show');
+
+    initScrollable('.grouped', 5);
+
+  });
+</script>

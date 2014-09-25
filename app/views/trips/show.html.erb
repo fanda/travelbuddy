@@ -1,0 +1,95 @@
+<h1>My trip with friends</h1>
+
+<p>
+  <% @users.each_with_index do |user, i| %>
+  <% break if i >= 5 %>
+    <%= link_to image_tag(facebook_large_picture_url(user.facebook_id)),
+                user_profile_url(user.facebook_id),
+                :class => 'amatch bimg', :title => "#{user.name}" %>
+  <% end %>
+</p>
+
+<%= image_tag @trip.map, :id => 'map_image' %>
+
+<div class="out"><br/></div>
+<% if @user_own_trip %>
+  <ul class="nav nav-tabs" id="trip_tabs">
+    <li<%= ' class=active' unless @active_tab %>><a href="#wall">Wall</a></li>
+    <li<%= ' class=active' if @active_tab == :about %>><a href="#about">About</a></li>
+    <li<%= ' class=active' if @active_tab == :calendar %>><a href="#calendar">Calendar</a></li>
+    <li<%= ' class=active' if @active_tab == :files %>><a href="#files">Files</a></li>
+    <% if @trip.waitings.any? %>
+      <li<%= ' class=active' if @active_tab == :requests %>><a href="#requests">Requests</a></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div class="tab-content">
+<div class="tab-pane<%= ' active' unless @active_tab %>" id="wall">
+    <h2><%= @trip.name %></h2>
+    <% if @country_message %>
+      <p>We are going to visit <%= @country_message %>.</p>
+    <% end %>
+    <br/>
+
+    <% if @user_invited_trip %>
+      <strong>You are invited to this trip!</strong>
+      <%= link_to('Accept invitation', accept_trip_path(@trip), :class => 'btn btn-success', :method => :put) %>
+      <%= link_to('Reject invitation', reject_trip_path(@trip), :class => 'btn btn-danger', :method => :put) %>
+    <% elsif not @user_invited_trip and not @user_own_trip and not @user_waiting_trip %>
+      <%= link_to('Join the trip', join_trip_path(@trip), :class => 'btn btn-primary', :method => :put) %>
+    <% end %>
+
+    <br/><br/>
+    <div class="fb-comments" data-href="<%= trip_url(@trip) %>" data-num-posts="5" data-width="400"></div>
+</div>
+
+<div class="tab-pane<%= ' active' if @active_tab == :about %>" id="about">
+  <% if @user_own_trip %>
+    <%= link_to('Invite friends', invite_users_trip_path(@trip), :class => 'btn btn-primary', :rel => 'facebox') %>
+    <%= link_to('Leave trip', leave_trip_path(@trip), :class => 'btn btn-primary', :method => :put, :confirm => 'Are you sure?') %>
+    <br/><br/>
+
+    <%= render :partial => 'form', :locals => {
+             :path => trip_path(@trip), :method => :put } %>
+  <% else %>
+    <%= image_tag @trip.map %>
+  <% end %>
+</div>
+
+<div class="tab-pane<%= ' active' if @active_tab == :calendar %>" id="calendar">
+  <%= link_to('Add event', new_trip_event_path(@trip), :class => 'btn btn-primary', :rel => 'facebox') if @user_own_trip %><br/><br/>
+
+  <%= raw(event_calendar) %>
+</div>
+
+<div class="tab-pane<%= ' active' if @active_tab == :files %>" id="files">
+  <%= link_to('Upload files', new_trip_file_path(@trip), :class => 'btn btn-primary', :rel => 'facebox') if @user_own_trip %><br/><br/>
+
+  <% unless @files.blank? %>
+    <% @files.each do |file| %>
+      <p><%= link_to file.name, file.file.url %> (<%= number_to_human_size file.file_file_size %>, <%= file.file_file_name.split('.').last.upcase %>) <%= link_to image_tag('trash.png'), trip_file_path(@trip.id, file.id), :method => :delete, :confirm => 'Are you sure?', :title => 'Delete file' %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<% if @trip.waitings.any? and @user_own_trip %>
+  <div class="tab-pane<%= ' active' if @active_tab == :requests %>" id="requests">
+    <% @trip.waitings.each do |user| %>
+      <div class="msg">
+        <%= image_tag user.picture_url,
+                :class => "i#{user.facebook_id} tip",
+                :title => user.name, :rel => "/friend/facebook/#{user.facebook_id}" %>
+        <div>
+          <%= link_to user.name, facebook_profile_url(user.facebook_id), :class=>'name', :target => '_blank'%>
+          <%= link_to('Accept', accept_user_trip_path(@trip, user.facebook_id), :class => 'btn btn-success', :method => :put)  %>
+          <%= link_to('Deny', deny_user_trip_path(@trip, user.facebook_id), :class => 'btn btn-danger', :method => :put)  %>
+        </div>
+        <div class="out"></div>
+      </div>
+      <br/><br/>
+    <% end %>
+  </div>
+<% end %>
+
+</div>

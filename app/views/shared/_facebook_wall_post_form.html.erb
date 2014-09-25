@@ -1,0 +1,22 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    FB.ui(
+       {
+         display: 'iframe',
+         access_token: at,
+         method: 'feed',
+         name: '<%=t "travel_buddy" %>',
+         caption: '<%=t "facebook.feed.caption" %>',
+         description: '<%= @travels_in_worlds %>',
+         link: '<%= AppConfig.app_url %>'
+       },
+       function(response) {
+         if (response && response.post_id) {
+           alert('Post was published.');
+         } else {
+           alert('Post was not published.');
+         }
+       }
+     );
+  });
+</script>

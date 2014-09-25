@@ -1,0 +1,29 @@
+<%= form_tag invite_users_trip_path(@trip), :method => :post, :class => 'formtastic', :id=>"invite_users" do %>
+  <div id="user_settings_head">
+    <h1>Select friends and invite them</h1>
+  </div>
+  <div id="select_friends_body">
+  </div>
+  <div id="user_settings_foot">
+    <%= submit_tag 'Invite friends', :class => 'btn btn-success' %>
+    <%= submit_tag 'Cancel', {
+        :name => 'reset', :class => 'btn', :type => "reset",
+        :onclick => "jQuery(document).trigger('close.facebox');" } %>
+  </div>
+  <textarea class="dis" name="users"></textarea>
+<% end %>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<%= javascript_include_tag "jquery.facebook-multifriend-select" %>
+<script type="text/javascript">
+  $("#select_friends_body").jfmfs(
+    {
+        friend_fields: "id,name,last_name",
+        pre_selected_friends: [],
+        exclude_friends: [<%= @pals.collect {|u|u.uid}.join(",") %>]
+    }
+  );
+  $("#select_friends_body").bind("jfmfs.selection.changed", function(e, data) {
+    var selectedFriends = $("#select_friends_body").data('jfmfs').getSelectedIds();
+    $('#invite_users textarea').html(selectedFriends.join(','));
+  });
+</script>

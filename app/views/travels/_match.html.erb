@@ -1,0 +1,13 @@
+<div class="match<%= " #{special}" if special %>">
+  <%= image_tag user.picture_url,
+                :class => "i#{user.facebook_id} tip",
+                :title => user.name,
+                :rel => "/friend/facebook/#{user.facebook_id}" %>
+  <div>
+    <%= link_to user.name, user_profile_url(user.facebook_id),
+                :class=>'name', :target => '_blank' %>
+    <%= message.html_safe %>
+
+  </div>
+  <div class="out"></div>
+</div>

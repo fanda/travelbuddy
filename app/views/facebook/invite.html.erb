@@ -1,0 +1,26 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    FB.XFBML.parse();
+    inviteOnFacebook('<%= invitation_message %>');
+  });
+</script>
+<% if false and params[:fin] %>
+  <div class="alert alert-success">
+    <a class="close" data-dismiss="alert">×</a>
+    <%=t 'invitation_finished' %>
+  </div>
+<% end %>
+<%
+  content = CGI.escapeHTML("<fb:name uid='#{current_user.facebook_id}'
+  firstnameonly='true' shownetwork='false'/> #{t('invitation_text')}
+  <fb:req-choice url='#{root_url(:top=>true)}' label='#{t('invitation_label')}'/>")
+%>
+<fb:serverFbml width='760'>
+  <script type="text/fbml">
+    <fb:fbml>
+      <fb:request-form action="<%= invite_friends_url(:fin=>true) %>" method="POST" invite="true" type="Travel Buddy" content="<%= content %>">
+        <fb:multi-friend-selector max="8" actiontext="<%=t 'invitation_caption' %>" showborder="false" rows="5" import_external_friends="false" exclude_ids="">
+      </fb:request-form>
+    </fb:fbml>
+  </script>
+</fb:serverFbml>

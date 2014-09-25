@@ -1,0 +1,30 @@
+development:
+  fb_app_id: 320036051387770
+  fb_app_sec: 056da10ebd443a5cd68c344669039430
+  app_url: http://80.79.23.37:3000/
+  fb_page_id:
+  email: info@mytravelbuddy.co
+  shown_countries_profile: 20
+  shown_countries: 5
+  shown_without_aggregation: 1
+  most_popular_limit: 3
+  default_search_term: 'travel guide'
+  s3:
+    bucket: mtb-dev
+    access_key_id: AKIAJ3QQLU66Q6CXXOQQ
+    secret_access_key: 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
+production:
+  fb_app_id: 379016228787976
+  fb_app_sec: 857531c7abe2486ab847b60553f9ee17
+  fb_page_id:
+  email: info@mytravelbuddy.co
+  app_url: http://mytravelbuddy.heroku.com/
+  shown_countries_profile: 20
+  shown_countries: 5
+  shown_without_aggregation: 3
+  most_popular_limit: 3
+  default_search_term: 'travel guide'
+  s3:
+    bucket: travel-buddy
+    access_key_id: AKIAJ3QQLU66Q6CXXOQQ
+    secret_access_key: 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

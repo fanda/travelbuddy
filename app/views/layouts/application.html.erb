@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%=t 'travel_buddy' %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <% if @facebook_canvas %>
+    <style>body{width: 750px;}#cfluid{width: 730px;}#cfluid .brand{margin-left: 240px;}</style>
+  <% end %>
+  <!--[if lt IE 9]>
+  <%= stylesheet_link_tag    "ie" %>
+  <![endif]-->
+  <meta property="og:title" content="<%=t 'travel_buddy' %>"/>
+  <meta property="og:description" content="<%=t 'short_about' %>"/>
+  <meta property="og:image" content="<%= AppConfig.app_url %>assets/mytravelbuddy_fb.png"/>
+  <meta property="fb:page_id" content="<%= AppConfig.fb_page_id %>" />
+  <script type="text/javascript">
+   var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-30972904-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
+</head>
+<body>
+  <div id="fb-root"></div>
+  <script>
+  <% if params[:top] == 'true' %>
+    window.top.location = '/';
+  <% end %>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : "<%= AppConfig.fb_app_id %>", // App ID
+      channelUrl : "<%= root_url %>channel.html", // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      oauth      : true, // enable OAuth 2.0
+      xfbml      : true  // parse XFBML
+    });
+    fbApiInit = true; //init flag
+  };
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+  </script>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div id="cfluid" class="container-fluid">
+        <a class="brand" href="/"><%= image_tag('mytravelbuddy.png') %></a>
+        <div class="nav-collapse">
+          <ul class="nav pull-right">
+          <% if user_signed_in? %>
+            <li id="nav_user" class="dropdown">
+              <a href="#nav_user" class="dropdown-toggle" data-toggle="dropdown">
+                <%= image_tag current_user.picture_url, :width => 25 %>&nbsp;
+                <%#= "#{t('logged_in_via')} #{used_service.provider.capitalize}" %>
+                <%= used_service.uname %>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'My profile', user_profile_path(current_user.facebook_id) %></li>
+                <li><%= link_to 'Settings', user_settings_path, :rel => 'facebox' %></li>
+                <li><%= link_to 'Post on wall', share_path, :rel => 'facebox' %></li>
+                <li class="divider"></li>
+                <li><%= link_to t('sign_out'), signout_services_path %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Sign in with Facebook", "#{AppConfig.app_url}auth/facebook" %></li>
+          <% end %>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+
+
+  <div id="content" class="container-fluid">
+    <div class="row-fluid">
+
+      <% unless @facebook_canvas %>
+      <div id="sidebar" class=" sidebar-nav">
+      <% if user_signed_in? %>
+        <ul class="nav nav-list">
+          <li<%= active_nav_item? root_path %>>
+            <%= link_to '<i class="icon-star"></i> Friend Updates'.html_safe, root_path %>
+          </li>
+          <li<%= active_nav_item? new_travel_path %>>
+            <%= link_to '<i class="icon-heart"></i> My Travel Preferences'.html_safe, new_travel_path %>
+          </li>
+          <li<%= active_nav_item? match_travels_path %>>
+            <%= link_to '<i class="icon-search"></i> Find Travel Buddies'.html_safe, match_travels_path %>
+          </li>
+          <li<%= active_nav_item? share_path %>>
+            <%= link_to '<i class="icon-facebook"></i> Share on Facebook'.html_safe, share_path, :rel => 'facebox' %>
+          </li>
+          <li<%= active_nav_item? invite_friends_path %>>
+            <%#= link_to '<i class="icon-envelope"></i> Invite friends'.html_safe, invite_friends_path, :remote => true %>
+            <a href="javascript:inviteOnFacebook('<%= invitation_message %>');">
+              <i class="icon-envelope"></i> Invite friends
+            </a>
+          </li>
+          <li class="nav-header">My trips</li>
+          <% current_user.trips.each do |trip| %>
+            <%= content_tag :li do %>
+              <%= link_to trip.name, trip_path(trip) %>
+            <% end if trip.id %>
+          <% end if current_user.trips.any? %>
+          <li<%= active_nav_item? new_trip_path %>>
+            <%= link_to '<i class="icon-flag"></i> Create a trip'.html_safe, new_trip_path %>
+          </li>
+        </ul>
+        <br/>
+        <div class="well">
+          <div id="travel_buddy_friends">
+            <h4>Friends on Travel&nbsp;Buddy</h4>
+          </div>
+        </div><!--/.well -->
+
+        <div id="travel_amzn">
+        <![if !(lt IE 9)]>
+          <script type='text/javascript'>
+            var amzn_wdgt={widget:'Search'};
+                amzn_wdgt.tag='travbudd-20';
+                amzn_wdgt.columns='1';
+                amzn_wdgt.rows='5';
+                amzn_wdgt.defaultSearchTerm='<%= most_popular_countries %>';
+                amzn_wdgt.searchIndex='Books';
+                amzn_wdgt.width='180';
+                amzn_wdgt.showImage='True';
+                amzn_wdgt.showPrice='True';
+                amzn_wdgt.showRating='True';
+                amzn_wdgt.design='1';
+                amzn_wdgt.colorTheme='Blues';
+                amzn_wdgt.headerTextColor='#FFFFFF';
+                amzn_wdgt.outerBackgroundColor='#369BD7';
+                amzn_wdgt.marketPlace='US';
+          </script>
+          <script type='text/javascript' src='http://wms.assoc-amazon.com/20070822/US/js/AmazonWidgets.js'>
+          </script>
+        <![endif]>
+        </div>
+      <% elsif @index %>
+        <div class="well">
+          <div id="travel_buddy_friends">
+            <h4>Users on Travel&nbsp;Buddy</h4>
+          </div>
+          <% if User.count > 100 %>
+            <span id="user_count">and <%= User.count - 100 %> more&hellip;</span>
+          <% end %>
+        </div><!--/.well -->
+       <% end %>
+      </div><!--/sidebar -->
+      <% end %>
+
+      <div id="main">
+        <% if not user_signed_in? and @facebook_canvas.nil? and @index %>
+          <div id="hey_sign_up">
+            <div class="inner">
+              <p class="left"><%=t 'hey_sign_up' %></p>
+              <a href="/auth/facebook">
+                <%= image_tag 'facebook_signup_button.png', :class=>'left' %>
+              </a>
+              <div class="out"></div>
+            </div>
+          </div>
+        <% end %>
+        <%= flash_messages %>
+        <%= yield %>
+      </div><!--/main-->
+    </div>
+
+    <hr>
+
+    <footer>
+      <p>&copy; <%=t 'travel_buddy' %> <%= Time.now.year %></p>
+      <% if Rails.env.development? %>
+        <div id="debug"><%= debug @debug %></div>
+      <% end %>
+    </footer>
+  </div><!--/.fluid-container-->
+
+</body>
+</html>

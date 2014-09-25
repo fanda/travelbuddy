@@ -1,0 +1,30 @@
+<%= semantic_form_for @event, :url => (@event.id ? trip_event_path(@trip, @event) : trip_events_path(@trip)) do |f| %>
+<div id="user_settings_head">
+  <h1><%=t 'event_form_title' %></h1>
+</div>
+<div id="user_settings_body">
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :start_at, :as => :string, :input_html => {
+                    :value => @event.id ? @event.start_at.strftime('%m/%e/%Y') : nil,
+                    :readonly => true, :class => 'date begins' } %>
+    <%= f.input :end_at, :as => :string, :input_html => {
+                    :value => @event.id ? @event.end_at.strftime('%m/%e/%Y') : nil,
+                    :readonly => true, :class => 'date ends' } %>
+  <% end %>
+</div>
+<div id="user_settings_foot">
+    <% if @event.id %>
+      <small style="float:left">
+        <%= link_to 'Delete', trip_event_path(@trip.id, @event.id), :method => :delete, :confirm => 'Are you sure?' %>
+      </small>
+    <% end %>
+    <%= submit_tag 'Save', :class => 'btn btn-success' %>
+    <%= submit_tag 'Cancel', {
+        :name => 'reset', :class => 'btn', :type => "reset",
+        :onclick => "jQuery(document).trigger('close.facebox');" } %>
+</div>
+<% end %>
+<script type="text/javascript">
+  initDatepicker('form.event .date');
+</script>

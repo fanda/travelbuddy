@@ -1,0 +1,54 @@
+<div id="fb_head">
+  <h1><%=t 'map_on_wall_title' %></h1>
+</div>
+<div id="fb_body">
+  <div class="preview">
+    <%= image_tag current_user.picture_url, :class=>'left' %>
+    <div class="text left">
+      <%#= link_to current_user.name, nil, :name => 'nil' %>
+      <textarea id="wtext"><%= wall_post_caption %></textarea><br/>
+      <%= image_tag current_user.map, :width => 330 %>
+    </div>
+    <div class="out"></div>
+  </div>
+</div>
+<%= javascript_include_tag "jquery.autosize" %>
+<div id="fb_foot">
+  <small class="dis" style="float:left">
+    You haven't granted permission to post on wall.<br/>
+    <a href="#" id="grant_public_stream_perm">Click here to grant it.</a>
+  </small>
+  <button id="post_on_wall_button" onclick="shareWithFacebookOnFacebox(
+              '<%=t 'travel_buddy' %>',
+              $('#wtext').text(),
+              '<%= @travels_in_worlds %>',
+              '<%= AppConfig.app_url %>',
+              '<%= current_user.map %>',
+              function() {alert('<%=t 'wall_post_success' %>');}
+              );" class="btn btn-primary">Post</button>
+
+  <button onclick="jQuery(document).trigger('close.facebox'
+              );" class="btn">Not now</button>
+</div>
+<script type="text/javascript">
+  $("#wtext").autosize();
+  FB.api('/me/permissions', {access_token: at}, function (response) {
+    var perms = response.data[0];
+    if (!perms.publish_stream) { // User DOESN'T have permission
+      $('#fb_foot small').show();
+      $('#post_on_wall_button').attr('disabled', 'true');
+    }
+  });
+  $('#grant_public_stream_perm').click(function() {
+    FB.login(function(response)
+    {
+      FB.api('/me/permissions', {access_token: at}, function (response) {
+        var perms = response.data[0];
+        if (perms.publish_stream) { // User DOESN'T have permission
+          $('#fb_foot small').hide();
+          $('#post_on_wall_button').removeAttr('disabled');
+        }
+      });
+    }, {perms:'publish_stream'});
+  });
+</script>

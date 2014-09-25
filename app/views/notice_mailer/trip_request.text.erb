@@ -1,0 +1,9 @@
+Dear <%= @user.name %>,
+
+there is new request to join the trip <%= @trip.name %>.
+
+Take a look at <%= AppConfig.app_url.chomp('/') %><%= trip_path @trip %> where you can accept or deny this request.
+
+Best,
+
+<%= I18n.t('travel_buddy') %>  <%= AppConfig.app_url %>

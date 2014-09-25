@@ -1,0 +1,22 @@
+<%= semantic_form_for @attachment, :url => (@attachment.id ? trip_file_path(@trip, @attachment) : trip_files_path(@trip)) do |f| %>
+<div id="user_settings_head">
+  <h1><%=t 'attachment_form_title' %></h1>
+</div>
+<div id="user_settings_body">
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :file, :as => :file %>
+  <% end %>
+</div>
+<div id="user_settings_foot">
+    <% if @attachment.id %>
+      <small style="float:left">
+        <%= link_to 'Delete', trip_file_path(@trip.id, @attachment.id), :method => :delete, :confirm => 'Are you sure?' %>
+      </small>
+    <% end %>
+    <%= submit_tag 'Save', :class => 'btn btn-success' %>
+    <%= submit_tag 'Cancel', {
+        :name => 'reset', :class => 'btn', :type => "reset",
+        :onclick => "jQuery(document).trigger('close.facebox');" } %>
+</div>
+<% end %>

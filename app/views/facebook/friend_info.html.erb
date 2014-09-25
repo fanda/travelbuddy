@@ -1,0 +1,10 @@
+<ul>
+<%= content_tag(:li, "Is from #{country_name @user.hometown}")  unless @user.hometown.blank? %>
+<%= content_tag(:li, "Lives in #{country_name @user.location}") unless @user.location.blank? %>
+
+<%= image_tag @user.map, :width => 200 %>
+
+<% unless @message.blank? %>
+  <li><%= "#{@user.name} #{strip_tags @message}" %></li>
+<% end %>
+</ul>

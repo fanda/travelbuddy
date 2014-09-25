@@ -1,0 +1,24 @@
+<script type="text/javascript">
+  function invokeUI() {
+    FB.ui({
+      method: 'apprequests',
+      //access_token: at,
+      //display: 'iframe',
+      message: '<%= "#{current_user.name} #{t('invitation_text')}" %>'
+    }, function(response){
+        dbg(response);
+        alert('All sent');
+        /*if (!response || response.error) {
+          dbg(response);
+        } else {
+          alert('All sent');
+        }*/
+    });
+  };
+  $(document).ready(function() {
+    fbEnsureInit( invokeUI() );
+  });
+
+</script>
+
+<button onclick="invokeUI();return false;">Click</button>

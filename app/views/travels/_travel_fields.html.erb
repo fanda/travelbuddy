@@ -1,0 +1,6 @@
+  <%= f.input :country, :as => :hidden %>
+  <%= f.input :begins,  :as => :string, :input_html => { :class => 'date' },
+                        :label => false %>
+  <%= f.input :ends,    :as => :string, :input_html => { :class => 'date' },
+                        :label => false %>
+  <%#= link_to_remove_association 'Remove travel', f, :title => 'Remove this travel' %>

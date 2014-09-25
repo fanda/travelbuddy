@@ -1,0 +1,79 @@
+<%= form_tag path, :method => method, :id => 'new_travels' do %>
+
+  <%= hidden_field_tag :map, '', :id => 'map_data' %>
+
+  <% if @error %>
+    <div class="alert alert-error">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= @error %>
+    </div>
+  <% end %>
+
+  <p>
+    <%= label_tag 'trip_name', 'Name of the trip' %>
+    <%= text_field_tag "trip[name]", @trip.name %>
+  </p>
+  <p>
+    <%= label_tag 'trip_about', 'About the trip' %>
+    <%= text_area_tag "trip[about]", @trip.about, :style => 'width:100%;height:4em' %>
+  </p>
+
+  <div id="matchwrap" style="float:left">
+    <p>When do you plan to go on trip?</p>
+
+    <ol id="preferences">
+      <%# 1.times do |index| %>
+        <%#= render :partial => '/travels/preference', :locals => {:i => index} %>
+      <%# end %>
+      <li><span></span>
+        <%= text_field_tag "preference[0][begins]", preference_value(0,:begins),
+                    :readonly => true, :class => 'date begins',
+                    :title => 'Departure' %>
+        <%= text_field_tag "preference[0][ends]", preference_value(0,:ends),
+                    :readonly => true, :class => 'date ends',
+                    :title => 'Return' %>
+        <%= hidden_field_tag "preference[0][id]", @preferences[0] ? @preferences[0].id : nil %>
+        <i class="icon-remove"></i>
+      </li>
+    </ol>
+
+  </div>
+
+  <div class="out"></div>
+
+  <p><%=t 'new_travel_map_hint' %></p>
+
+  <ul id="countries" style="height:350px">
+  <% Country.list.each_pair do |continent, countries| %>
+    <li>
+      <%= label_tag continent, :class => "continent #{continent_checked(continent)}" do %>
+        <%= continent %>
+      <% end %>
+      <ul style="display:none">
+      <% countries.each_pair do |country, code| %>
+        <li>
+          <%= label_tag country, :class => 'checkbox' do %>
+            <%= check_box_tag "countries[#{code}]", code,
+                              country_checked(code) %>
+            <%= country %>
+          <% end %>
+        </li>
+      <% end %>
+      </ul>
+    </li>
+  <% end %>
+  </ul>
+
+  <div id="atlas" class="new-travels"></div>
+
+  <div class="out"></div>
+
+  <%= submit_tag 'Save this trip', :class => 'btn btn-success' %>
+
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    initMap([<%= countries_for_javascript_array %>]);
+  });
+</script>

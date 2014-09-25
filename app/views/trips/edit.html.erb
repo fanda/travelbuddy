@@ -1,0 +1,6 @@
+<h1>Update travel preferences of the trip</h1>
+
+<p><%=t 'new_travel_map_hint' %></p>
+
+<%= render :partial => 'form', :locals => {
+            :path => trips_path, :method => :post } %>

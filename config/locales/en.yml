@@ -1,0 +1,58 @@
+en:
+  sign_out: Sign out
+  logged_in_via: Logged in via
+  travel_buddy: My Travel Buddy
+  short_about: Travel Buddy allows You to see where and when Your Facebook friends want to travel. You can also see where Your friends have lived and visited!
+  short_about_old: Travel Buddy helps you find which friends share your travel goals so you can plan your next dream vacation. Just update your preferences, and you’re on your way!
+  hey_sign_up: Use Travel Buddy to see where and when your Facebook friends want to travel.
+  invitation_caption: Select Friends for Travel Buddy
+  invitation_text: wants to plan the trip of a lifetime. Find out if you can be Travel Buddies!
+  invitation_finished: Thank You!
+  invitation_label: Be Travel Buddy
+  create_user_success: Welcome to Travel Buddy! To get started, select the countries you wish to visit and dates you are available to travel. Then invite your friends and see if you can be Travel Buddies!
+  create_user_notice: Please, see Your settings <a href="/user/settings" rel="facebox">here</a>.
+  create_user_error: This is embarrassing! There was an error while creating your account from which we were not able to recover.
+  earliest_departure: Earliest departure
+  latest_return: Latest return
+  create_travel_success: Travel preferences saved.
+  create_travel_error: Please check order of filled dates.
+  map_on_wall_title: Post on Your Facebook Wall
+  wall_post_text: Find your travel buddies on http://mytravelbuddy.co
+  wall_post_success: Travel preferences posted on Your Facebook Wall.
+  popover_not_loaded: does not share personal information
+  country_match_message: Map highlights countries where both you and some of your friends want to travel.
+  match_map_hint: Please click on a country in the map to turn on/off result filtering
+  time_match_message: Map highlights countries where friends with same time preferences want to go.
+  message_not_found: Sorry but requested message was not found.
+  add_comment: comments
+  new_travel_map_hint: Click to select countries you'd like to visit.
+  user_settings_success: Settings have been saved.
+  user_settings_error: Settings have been saved.
+  user_settings: Settings
+  user_notify_mail: Notify me throught mail
+  user_notify_wall: Notify me throught wall
+  event_form_title: About event
+  attachment_form_title: File upload
+  create_trip_success: Trip was successfully created.
+  update_trip_success: Trip was successfully updated.
+  create_trip_error: There were errors while creating the trip.
+  update_trip_error: There were errors while updating the trip.
+  invitation_mail_subject: Trip invitation
+  invitation_feed_message: You have been invited on the trip. Take a look at page of the trip
+  request_mail_subject: Trip membership request
+  request_feed_message: Your trip can have a new member. Take a look at page of the trip
+  date:
+    formats:
+      default: "%m/%d/%Y"
+      short: '%b %d'
+      long: '%B %d, %Y'
+  time:
+    am: am
+    formats:
+      default: ! '%m/%d/%Y'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: pm
+  facebook:
+    feed:
+      perfect_caption: Perfect travel match found

@@ -1,0 +1,28 @@
+<%= form_tag user_settings_path, :method => :post, :id => 'user_settings' do %>
+  <div id="user_settings_head">
+    <h1><%=t 'user_settings' %></h1>
+  </div>
+  <div id="user_settings_body">
+
+    <h3>Notifications</h3>
+    <div>
+      <p>
+      <%= radio_button_tag :notify, User::NOTIFY_MAIL,
+                            @current_user.notify_throught_mail? %>
+      <%= label_tag "notify_#{User::NOTIFY_MAIL}", t('user_notify_mail') %>
+      </p><p>
+      <%= radio_button_tag :notify, User::NOTIFY_WALL,
+                            @current_user.notify_throught_wall? %>
+      <%= label_tag "notify_#{User::NOTIFY_WALL}", t('user_notify_wall')  %>
+      </p>
+    </div>
+
+
+  </div>
+  <div id="user_settings_foot">
+    <%= submit_tag 'Save settings', :class => 'btn btn-success' %>
+    <%= submit_tag 'Cancel', {
+        :name => 'reset', :class => 'btn', :type => "reset",
+        :onclick => "jQuery(document).trigger('close.facebox');" } %>
+  </div>
+<% end %>
